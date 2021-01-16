@@ -1,0 +1,16 @@
+.list_item,
+.list_count {
+  margin-right: 0.5em;
+  font-size: large;
+}
+
+.list_count {
+  padding: 0.3em;
+  border-radius: 50%;
+  color: white;
+  background-color: salmon;
+}
+
+.list_btn {
+  padding: 0.5em;
+}
