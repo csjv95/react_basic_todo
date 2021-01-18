@@ -4,10 +4,11 @@ import './input.css';
 class Input extends Component {
   inputRef = React.createRef();
 
-  submit= (event)=> {
+  submit = (event)=> {
     event.preventDefault();
     const todo = this.inputRef.current.value;
-    todo && console.log(todo);
+    todo && this.props.add(todo);
+    console.log(this.props);
  }
 
   render() {

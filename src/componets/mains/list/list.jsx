@@ -2,37 +2,36 @@ import React, { Component } from 'react';
 import './list.css';
 
 class List extends Component {
-  state = {
-    count : 0
-  }
-
   plus = ()=> {
-    const count = this.state.count + 1;
-    this.setState({count});
+    this.props.plus();
   }
 
   minus = ()=> {
-    const count = this.state.count;
-    this.setState({count: count > 0 ? count -1 : 0})
+    this.props.minus();
   }
 
-  delte = ()=> {
-
+  delete = ()=> {
+    this.props.delete();
   }
-  
+
+  add = todo => {
+    const todos = this.props.add(todo);
+    console.log(`list${todos}`);
+  }
+
   render() {
     return(
       <ul className='list'>
         <li>
-          <span className='list_item' ></span>
-          <span className='list_count'>{this.state.count}</span>
+          <span className='list_item'>work</span>
+          <span className='list_count'></span>
           <button className='list_btn' onClick={this.plus}>
             <i className="fas fa-plus"></i>
           </button>
           <button className='list_btn' onClick={this.minus}>
             <i className="fas fa-minus"></i>
           </button>
-          <button className='list_btn' onClick={this.delte}>
+          <button className='list_btn' onClick={this.delete}>
             <i className="fas fa-trash"></i>
           </button>
         </li>
